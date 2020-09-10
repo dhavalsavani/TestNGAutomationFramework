@@ -5,6 +5,15 @@
 	<groupId>com.automation</groupId>
 	<artifactId>TestNGAutomationFramework</artifactId>
 	<version>1.0.0</version>
+	
+	<properties>
+		<testng.version>7.3.0</testng.version>
+		<log4j2.version>2.13.3</log4j2.version>
+		<selenium.version>3.141.59</selenium.version>
+		<webdrivermanager.version>4.2.0</webdrivermanager.version>
+		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+		<java.version>8</java.version>
+	</properties>
 
 	<dependencies>
 	
@@ -12,21 +21,34 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.14.3</version>
-			<scope>test</scope>
+			<version>${testng.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>${webdrivermanager.version}</version>
 		</dependency>
 		
 		<!-- Libraries for Logger -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.11.1</version>
+			<version>${log4j2.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.11.1</version>
+			<version>${log4j2.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -36,10 +58,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
+				<version>${maven.compiler.plugin.version}</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 		</plugins>
